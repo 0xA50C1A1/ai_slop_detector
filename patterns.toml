@@ -1,0 +1,1400 @@
+# ============================================================
+# AI-Slop Detection Patterns
+# Engine: Python `regex` module (import regex as re)
+# Format: TOML, array-of-tables per category
+# Validated against Python 3.12 tomllib
+#
+# Category semantics (the report is grouped by these names):
+#   names               - AI-favourite proper names
+#   places              - AI-favourite place names
+#   romance             - non-explicit romantic tropes (tension, gazes, flirting)
+#   nsfw_slop           - explicit sexual content + anatomical euphemisms
+#   consent_theater     - performative consent lines
+#   common_aisms        - generic AI writing tics (any genre)
+#   body_reactions      - non-explicit physical reactions and gestures
+#   dialogue_and_pacing - time/silence/dialogue pacing tics
+#   metaphor_slop       - purple-prose metaphors and similes
+#   negation_pivots     - "not X, but (rather) Y" structural pivots
+#   fantasy_slop        - fantasy-genre tropes
+# ============================================================
+
+
+# ---------------------------------------------------------
+# NAMES
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Elara(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Thorne(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Silas(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Elias(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Alaric(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Zephyr(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Kael(?:en|an|yn|is|or|ith|in)?(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Lyra(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)(?:Marcus|Sarah)\\s+Chen(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Van[ce]e?(?!\\w)"
+
+# ---------------------------------------------------------
+# PLACES
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "places"
+pattern = "(?<!\\w)Whispering\\s+(?:Woods|Pines|Forest|Glades?|Caverns?|Hollow|Vale|Grove)(?!\\w)"
+
+[[phrase]]
+category = "places"
+pattern = "(?<!\\w)Oakheaven(?!\\w)"
+
+# ---------------------------------------------------------
+# ROMANCE
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)ruin\\s+(?:you|me|him|her|them)\\s+for(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)silent\\s+invitation(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)scent\\s+that['’]s\\s+distinctly(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)smiled\\s+predator(?:y|ily)(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)hungry\\s+gaze(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)knowing\\s+(?:smile|smirk|look|glance|nod|expression|glint|gaze)(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)racing\\s+with\\s+anticipation(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)a\\s+moth\\s+to\\s+a\\s+flame(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)half[\\-\\s]lidded\\s+eyes(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)make\\s+me\\s+yours,\\s+claim\\s+me(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)like\\s+a\\s+predator\\s+stalking\\s+its\\s+prey(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)chuckles?\\s+darkly(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)a\\s+mischievous\\s+glint(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)(?:playfully\\s+smirk(?:ing)?|(?:a\\s+)?smirk\\s+(?:playing\\s+on|tugging\\s+at)\\s+(?:the\\s+corners?\\s+of\\s+)?(?:her|his|their|my|your)\\s+lips)(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)I\\s+don['’]t\\s+bite\\.{3}\\s*unless\\s+you\\s+want\\s+me\\s+to(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)torn\\s+between\\s+propriety\\s+and\\s+desire(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)naughty\\s+boy(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)tracing\\s+a\\s+finger\\s+along\\s+(?:your|his|her|their|my)\\s+jawline(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)the\\s+atmosphere\\s+(?:(?:is|was|becomes?|turns?)\\s+(?:thick|heavy|tense|charged|electric)|(?:crackles?|hums?|thrums?)\\s+with)(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)the\\s+air\\s+(?:(?:is|was|becomes?|turns?)\\s+(?:thick|heavy|dense)|(?:crackles?|hums?|thrums?|pulses?|vibrates?))\\s+with(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)the\\s+air\\s+crackled\\s+with\\s+unspoken(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)unspoken\\s+tension(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)eager\\s+anticipation(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)siren(?:['’]s)?\\s+call(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)you\\s+really\\s+know\\s+how\\s+to\\s+treat\\s+a\\s+lady!?(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)(?:anticipation\\s+builds|tension\\s+mounts|crescendo\\s+of)(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)grins?\\s+wickedly(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)a\\s+bruising\\s+kiss(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)propriety\\s+be\\s+damned(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)an\\s+ethereal\\s+beauty(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)breathless\\s+and\\s+eager(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)(?:threads|tangles)\\s+(?:his|her|their|my)\\s+fingers(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)little\\s+mouse(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)minx(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)you['’]re\\s+a\\s+bold\\s+one(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)tantalizing\\s+promise(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)sways?\\s+hypnotically(?!\\w)"
+
+[[phrase]]
+category = "romance"
+pattern = "(?<!\\w)low,\\s*rumbling\\s*growl(?!\\w)"
+
+# ---------------------------------------------------------
+# NSFW SLOP (explicit + anatomical euphemisms)
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)ample\\s+bosom(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)hoarse\\s+with\\s+desire(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)quivering\\s+with\\s+need(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)waves\\s+of\\s+pleasure(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)rides?\\s+out\\s+(?:her|his|their|your|my)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)voice\\s+husky\\s+with\\s+desire(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)ministrations?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)husky\\s+whispers?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)seductive\\s+purrs?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)don['’]t\\s+stop,\\s+don['’]t\\s+ever\\s+stop(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)orchestra\\s+of\\s+(?:moans?|gasps?|breaths?|sensations?|emotions?|desire|pleasure|pain|sounds?)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:her|his|their|your|my)\\s+(?:body|voice|breath|moans?)\\s+(?:was|is|became|becomes|turned\\s+into)\\s+an?\\s+orchestra(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)husky\\s+voice(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)rivulets\\s+of(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)waves\\s+of\\s+arousal\\s+pooling\\s+in\\s+(?:her|his|their|my)\\s+belly(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)kiss[\\-\\s]bruised\\s+lips(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)pupils\\s+blown\\s+wide\\s+with\\s+pleasure(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)nails\\s+rake\\s+angry\\s+red\\s+lines(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)inner\\s+walls\\s+clenching(?:\\s+around)?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)bosomy\\s+breasts(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)still\\s+lodged\\s+deep\\s+inside\\s+(?:her|him|them|you|me)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)wet\\s+pop(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)take\\s+your\\s+pleasure(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:yours|mine|his|hers|theirs)\\s+to\\s+take(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)wanton(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)whispering\\s+words\\s+of\\s+passion(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)dance\\s+of\\s+pleasure(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)exhausted\\s+and\\s+spent(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)bites?\\s+(?:your|his|her|their|my)\\s+ear(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)stars\\s+burst\\s+behind\\s+(?:her|his|their|my|your)\\s+eyes(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)puckered\\s+hole(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:her|his|their|your|my)\\s+wet\\s+heat(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)whimpers,\\s+biting\\s+(?:her|his|their|my|your)\\s+lip(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)dusky\\s+nipples(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)slick\\s+folds(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)coaxes?\\s+out(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:maps|charts)\\s+(?:out|every)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)with\\s+each\\s+slow,\\s+deliberate\\s+movement(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)the\\s+pressure\\s+in\\s+(?:her|his|their|your|my)\\s+loins(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)penetrated\\s+to\\s+the\\s+hilt(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)arched\\s+spine(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)words?\\s+turns?\\s+into\\s+a\\s+purr(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)straddles?\\s+(?:your|his|her|their|my)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)arousal\\s+pool(?:ing|ed|s)?\\s+(?:in|between|around)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:her|his|their|my)\\s+bare\\s+mounds?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)heaving\\s+with\\s+desire(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:sensitive|heated)\\s+flesh(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)haze\\s+of\\s+pleasure(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:grinds?\\s+against|ruts?\\s+into)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)worships?\\s+every\\s+inch\\s+of\\s+(?:her|him|them|you|me)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:a\\s+)?moan\\s+escapes\\s+(?:her|his|their|your|my)\\s+lips(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)slick\\s+with\\s+(?:arousal|desire)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)weeping\\s+slit(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)throbbing\\s+member(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:turgid|engorged)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:velvet|honeyed)\\s+walls(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)silken\\s+folds(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)swollen\\s+bud(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:his|her|their)\\s+(?:impressive\\s+)?length(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:his|her)\\s+(?:throbbing|hard|aching|swollen|growing|straining)\\s+manhood(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:rigid|pulsing|swollen)\\s+shaft(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:her\\s+molten\\s+core|molten\\s+core)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:masculine|feminine)\\s+essence(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)(?:his\\s+)?rigid\\s+member(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)claiming\\s+(?:her|him)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)maiden(?:ly)?\\s+virtue(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)carnal\\s+(?:knowledge|desire|pleasure)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)intimate\\s+embrace(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)consummate\\s+(?:their|our)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)coupling(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)deflower(?:ed|ing)?(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)virtue\\s+comprom(?:ised|ising)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)her\\s+(?:secret|hidden)\\s+garden(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)sheath(?:ed|ing)\\s+himself(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)spear(?:s|ed|ing)?\\s+into\\s+(?:her|his|their|my|your)\\s+(?:slick|wet|velvet|silken|tight)\\s+(?:heat|core|walls?|channel|entrance)(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)honeyed\\s+entrance(?!\\w)"
+
+[[phrase]]
+category = "nsfw_slop"
+pattern = "(?<!\\w)throaty\\s+moan(?!\\w)"
+
+# ---------------------------------------------------------
+# CONSENT THEATER
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)only\\s+if\\s+you\\s+want(?!\\w)"
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)we\\s+can\\s+stop\\s+(?:at\\s+)?any\\s*time(?!\\w)"
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)(?:your|my|our)\\s+comfort\\s+is\\s+(?:my\\s+)?(?:priority|important)(?!\\w)"
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)(?:establish|respect)(?:ing)?\\s+boundaries(?!\\w)"
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)(?:tell|let)\\s+me\\s+if\\s+(?:you|it)(?!\\w)"
+
+[[phrase]]
+category = "consent_theater"
+pattern = "(?<!\\w)safe\\s*word(?!\\w)"
+
+# ---------------------------------------------------------
+# COMMON AISMS
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)well,\\s+well,\\s+well(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)maybe,\\s+just\\s+maybe(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)could(?:n['’]t|\\s+not)\\s+help\\s+but(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)a\\s+testament\\s+to(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)a\\s+dance\\s+as\\s+old\\s+as\\s+time(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:painted\\s+across|against|on)\\s+the\\s+canvas\\s+of(?:\\s+the\\s+night(?:\\s+sky)?)?(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:her|his|their|your|my)\\s+body\\s+is\\s+a\\s+canvas(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)humble\\s+abode(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)cold\\s+and\\s+calculating(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)unbeknownst\\s+to\\s+(?:him|her|them|me|you|us|it)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)iridescent(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)little\\s+did\\s+(?:she|he|they|you|I)\\s+know(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)towers?\\s+over(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)rich\\s+tapestry(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)delv(?:e[sd]?|ing)\\s+into(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)leans?\\s+in(?:\\s+close)?(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)another\\s+day\\s+in\\s+your\\s+life(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)a\\s+symphony\\s+of(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)audible\\s+pop(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)the\\s+world\\s+narrows(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)the\\s+ball\\s+is\\s+in\\s+your\\s+court(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)the\\s+game\\s+is\\s+on(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)the\\s+night\\s+is\\s+still\\s+young(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:tension\\s+(?:is|was|seems?|feels?)\\s+palpable|palpable\\s+tension)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:tapestry|kaleidoscope|cacophony|myriad)\\s+of(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:sends|ignites|awakens|stirs)\\s+(?:shivers|something)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)despite\\s+(?:herself|himself|themselves|myself|yourself)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)perhaps,\\s+just\\s+perhaps(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)for\\s+what\\s+(?:seemed|felt)\\s+like(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)wave\\s+of\\s+\\w+\\s+washed\\s+over(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)swallows?\\s+hard(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)licks?\\s+(?:his|her|their|my|your)\\s+lips(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:unable|can(?:not|['’]t)|could(?: not|n['’]t))\\s+to\\s+tear\\s+(?:his|her|their|my|your)\\s+eyes\\s+away(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:painfully|acutely)\\s+aware(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)between\\s+one\\s+heartbeat\\s+and\\s+the\\s+next(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:composure|control|restraint)\\s+(?:slips?|frays?|snaps?)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:mask|fa[cç]ade|armor)\\s+(?:slips?|cracks?)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)a\\s+sound\\s+somewhere\\s+between\\s+a\\s+(?:laugh|groan|moan|sob)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:the\\s+rest\\s+of\\s+the\\s+world|everything\\s+else)\\s+falls?\\s+away(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)for\\s+the\\s+first\\s+time\\s+in\\s+(?:years|a\\s+long\\s+time|forever|ages)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)nothing\\s+could\\s+have\\s+prepared\\s+(?:her|him|them|me|you)\\s+for(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)wasn['’]t\\s+ready\\s+for(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)delicate\\s+balance(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:grounding\\s+presence|anchor\\s+in\\s+the\\s+storm|tether\\s+to\\s+reality)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)staccato\\s+rhythm(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)rapid\\s+breathing(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)studied\\s+(?:me|you|him|her|them)\\s+intently(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)voice\\s+unwavering\\s+with\\s+(?:conviction|resolve|certainty)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:a\\s+)?rush\\s+of\\s+energy\\s+(?:surges?|surged|surge)\\s+through(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)igniting\\s+every\\s+nerve\\s+ending(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:every\\s+)?nerve\\s+ending(?:s)?\\s+(?:with|alight|aflame)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:felt|feels?)\\s+a\\s+subtle\\s+shift\\s+deep\\s+inside(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:a\\s+)?seed\\s+of\\s+change\\s+taking\\s+root(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:take|takes|took)\\s+root\\s+in\\s+(?:her|his|their|my|your)\\s+(?:spirit|soul|heart|mind)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:sacred|higher|true)\\s+calling(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)voice\\s+trembling\\s+slightly(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)waiting\\s+for\\s+(?:his|her|their|your|my)\\s+response(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:mind,\\s*body,?\\s*and\\s+soul|body,\\s*mind,?\\s*and\\s+soul|body\\s+and\\s+soul,?\\s+and\\s+mind)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)mi(?:xture|x)\\s+of\\s+(?:desire|lust|longing|arousal|passion|need|pleasure|pain|fear|anger|shame|guilt|anticipation|nervousness|excitement)\\s+and\\s+(?:desire|lust|longing|arousal|passion|need|pleasure|pain|fear|anger|shame|guilt|anticipation|nervousness|excitement|confusion)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:into|from|to\\s+the\\s+very)\\s+depths\\s+of\\s+(?:her|his|their|your|my)\\s+(?:soul|desire|being|self|spirit)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)plumbing\\s+the\\s+depths\\s+of(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)oh\\s+my\\.{3}"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)looking\\s+like\\s+the\\s+cat\\s+that\\s+got\\s+the\\s+cream(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)softly\\s+but\\s+firmly(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)dimly\\s+lit(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)fiery\\s+red\\s+hair(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)long\\s+lashes(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)warring\\s+with(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)with\\s+reckless\\s+abandon(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)torn\\s+between(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)chestnut\\s+eyes(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)whether\\s+you\\s+like\\s+it\\s+or\\s+not(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)without\\s+waiting\\s+for\\s+a\\s+response(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)nestled\\s+deep\\s+within(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)sent\\s+shockwaves?(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)wild\\s+abandon(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)like\\s+an\\s+electric\\s+shock(?!\\w)"
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)(?:like|as\\s+(?:if|though)|as)\\s+(?:a|an|the)?\\s*(?:[\\w-]+\\s+)?physical\\s+(?:blow|hit|strike|impact|weight|force|shock|jolt|slap|kick|shove|push|punch|thud)(?!\\w)"
+
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)threatens?\\s+to\\s+consume(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)elicits?\\s+a(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)lavishes?\\s+attention(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)in\\s+the\\s+space\\s+between\\s+heartbeats(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)hum\\s+with\\s+delight(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)embark\\s+on\\s+this(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)evident\\s+in\\s+(?:his|her|their|your|my)\\s+eyes(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)overwhelmed\\s+by\\s+the\\s+sheer(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)was\\s+taken\\s+aback(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)conspiratorial\\s+whispers?(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)catch\\s+my\\s+drift(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)grips?\\s+like\\s+a\\s+vice(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)revulsion\\s+warred\\s+with\\s+reluctance(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)journey\\s+of\\s+mutual\\s+understanding(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)the\\s+din\\s+of\\s+the\\s+crowd(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)steeling\\s+(?:herself|himself|themselves|myself|yourself)(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)for\\s+the\\s+sake\\s+of\\s+keeping\\s+things(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)what\\s+(?:seemed|felt)\\s+like\\s+an\\s+eternity(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)reveling\\s+in\\s+the\\s+satisfaction(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)finds?\\s+solace\\s+in(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)makes?\\s+quick\\s+work\\s+of(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)playing\\s+a\\s+dangerous\\s+game(?!\\w)"
+
+[[phrase]]
+category = "common_aisms"
+pattern = "(?<!\\w)and\\s+the\\s+game,\\s+as\\s+always,\\s+was\\s+on(?!\\w)"
+
+# ---------------------------------------------------------
+# BODY REACTIONS
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:breath\\s+(?:hitched|catches|caught|fanning|hot\\s+on)|sharp\\s+intake\\s+of\\s+breath)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)breath\\s+(?:she|he|they|I|you)\\s+didn['’]t\\s+know\\s+(?:she|he|they|I|you)\\s+(?:was|were)\\s+holding(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:heart\\s+(?:hammering|pounding|stutters|leaps|clenches|swells|skips\\s+a\\s+beat)|stomach\\s+(?:flips|drops|lurches))(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)heart\\s+hammering\\s+against(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)like\\s+a\\s+(?:trapped|caged)\\s+bird(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:heat|warmth|coils?)\\s+(?:blooms|spreads|floods|low\\s+in)\\s+(?:her|his|their|your|my)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)knees?\\s+(?:go\\s+weak|buckle|threaten\\s+to\\s+buckle)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)something\\s+inside\\s+(?:her|him|them|you|me)\\s+shifts(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)primal\\s+(?:urge|need|desire|instinct)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)all-consuming(?:\\s+(?:desire|need))?(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:(?:her|his|their|my|your)\\s+body\\s+betrays\\s+(?:her|him|them|me|you)|traitorous\\s+(?:body|heart))(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)closes?\\s+the\\s+distance\\s+between\\s+(?:them|us)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:cups|cradles|frames)\\s+(?:her|his|their|your|my)\\s+face(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:tilts?|tips?)\\s+(?:her|his|their|your|my)\\s+chin\\s+up(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)tilts?\\s+(?:her|his|their|my|your)?\\s*head\\s+(?:slightly|to\\s+the\\s+side)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)quirks?\\s+an\\s+eyebrow(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:exquisite|sweet)\\s+(?:agony|torment|pleasure)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)ghost\\s+of\\s+a\\s+(?:touch|kiss|smile)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)running\\s+(?:his|her|their|my|your)\\s+fingers\\s+through\\s+(?:his|her|their|my|your)\\s+hair(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:her|his|their|your|my)\\s+eyes\\s+(?:wide(?:ns?|ned)?|(?:darken|flutter)(?:ing|ed)?(?:\\s+(?:shut|closed))?|roll(?:ing|ed)?\\s+back)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)eyes\\s+(?:go|went|going)\\s+wide(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)eyes\\s+(?:sparkling|twinkling|glinted|glinting|searching|alight)(?:\\s+with(?:\\s+(?:mischief|mirth))?)?(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)pupils\\s+(?:dilat(?:e|ing|ed)|blown)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:drinks?|drinking|feasts?)\\s+(?:in\\s+the\\s+sight|(?:his|her|their|my|your)\\s+eyes)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)gaze\\s+(?:roam(?:s|ing|ed)?|flickers?(?:ed)?)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:locks?\\s+eyes\\s+with|to\\s+meet\\s+(?:her|his|their|your|my)\\s+gaze)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:lidded|smoldering)\\s+gaze(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)a\\s+flicker\\s+of\\s+(?:doubt|hope|recognition)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:something|a\\s+flicker\\s+of\\s+\\w+)\\s+(?:flickers?|flashes?|crosses?)\\s+(?:across|in|through)\\s+(?:her|his|their|your|my)\\s+(?:face|eyes|expression)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:her|his|their|my|your)?\\s*cheeks\\s+(?:flame(?:d)?|flaming)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:voice\\s+(?:drops?\\s+(?:an\\s+octave|to\\s+a)|(?:rough|gravelly)\\s+with)|(?:words?|voice)\\s+(?:dripping|laced)\\s+with|silky\\s+voice)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:keen|mewl)(?:ing|s)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)in\\s+a\\s+voice\\s+thick\\s+with\\s+(?:emotion|desire|longing)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)voice\\s+(?:barely|little\\s+more\\s+than)\\s+a\\s+(?:whisper|murmur)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:jaw\\s+(?:clenches|tightens|sets|tics)|grinding\\s+(?:his|her|their|your|my)\\s+teeth)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)feather[\\-\\s]light\\s+touch(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:trails?\\s+of\\s+(?:electricity|heat)|(?:spark|jolt|shock)\\s+of\\s+electricity)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:electri(?:c|fying)\\s+(?:touch|current)|magnetic\\s+pull)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:smells?|smelled|smelling)\\s+(?:like|of)\\s+(?:ozone|copper|sex|arousal|desire|sin|desperation)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:smells?|smelled|smelling)\\s+(?:like|of)\\s+[\\w-]+\\s+and\\s+(?:ozone|copper|sex|arousal|desire|sin|desperation)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:tasted?|tastes|tasting)\\s+(?:like|of)\\s+(?:copper|ozone|ash|sex|arousal|desire|sin|desperation)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:tasted?|tastes|tasting)\\s+(?:like|of)\\s+[\\w-]+\\s+and\\s+(?:copper|ozone|ash|sex|arousal|desire|sin|desperation)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:electricity|static|energy)\\s+(?:crackles?|hums?|buzzes?)\\s+(?:under|beneath|along)\\s+(?:her|his|their|my|your)\\s+skin(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)crashes?\\s+(?:into\\s+|onto\\s+)?(?:his|her|their|my|your)\\s+(?:lips|mouth)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:devours?|ravishes?)\\s+(?:her|his|their|your|my)?\\s*(?:lips|mouth|skin|body|neck|throat)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:rubs?|pinches?)\\s+the\\s+bridge\\s+of\\s+(?:her|his|their|your|my)\\s+nose(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)exhales?\\s+(?:a\\s+breath\\s+)?(?:she|he|they|I|you)\\s+didn['’]t\\s+(?:realize|know)\\s+(?:she|he|they|I|you)\\s+(?:was|were)\\s+holding(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:her|his|their|my|your)\\s+mind\\s+(?:races?|raced|racing)\\s+with(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)racing\\s+with\\s+(?:possibilit(?:y|ies)|thoughts?|questions?)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:reali[sz]ed?|reali[sz]ing)\\s+with\\s+sudden\\s+clarity(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)deep\\s+within\\s+(?:her|his|their|my|your)\\s+(?:soul|spirit|being|self)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)to\\s+the\\s+depths\\s+of\\s+(?:her|his|their|my|your)\\s+(?:being|soul|spirit|self)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)a\\s+faraway\\s+look\\s+in\\s+(?:her|his|their|my|your)\\s+eyes(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:her|his|their|my|your)\\s+eyes\\s+soften(?:ed|ing)?\\s+with\\s+something\\s+like(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:her|his|their|my|your)\\s+heart\\s+(?:seizes?|seized|twists?|twisted)\\s+with(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)a\\s+(?:small|tiny|faint)\\s+spark\\s+of\\s+(?:determination|hope|defiance)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)clawed\\s+fingers(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)shivers?\\s+(?:down|up|running\\s+up)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)waggles?\\s+(?:her|his|their|my)\\s+eyebrows(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)tongue\\s+darts?\\s+out(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)pushing\\s+aside\\s+(?:a\\s+)?strands?\\s+of\\s+hair(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)adam['’]s\\s+apple\\s+bobbing(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)butterflies\\s+in(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:jolts|courses)\\s+through(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)fiddles\\s+with\\s+the\\s+hem\\s+of(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:(?:(?:bone|marble)[\\-\\s])?(?:white|pale|bloodless|blanched)[\\-\\s]?knuckle(?:d|s)?|knuckles?\\s+(?:(?:turn(?:ing|ed)?|w[ea]nt|go(?:ing|ne)?|whiten(?:ing|ed)?)\\s+)?(?:white|pale|bloodless|blanched)|knuckles?\\s+(?:drained|stripped)\\s+of\\s+colou?r)(?!\\w)"
+
+[[phrase]]
+category = "body_reactions"
+pattern = "(?<!\\w)(?:grasps?|grabs?|takes?|catches?|seizes?|cups?)\\s+(?:your|my|his|her|their|the)\\s+chin(?:\\s+(?:and|,)?\\s+(?:forces?|makes?|compels?|tilts?)\\s+(?:you|me|him|her|them|it|your|my|his|her|their)\\s+to\\s+(?:meet|look|face))?(?!\\w)"
+
+# ---------------------------------------------------------
+# DIALOGUE & PACING
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "dialogue_and_pacing"
+pattern = "(?<!\\w)(?:time\\s+(?:seems\\s+to\\s+)?(?:slow|stop|freeze|stand\\s+still)s?|suspended\\s+in\\s+time)(?!\\w)"
+
+[[phrase]]
+category = "dialogue_and_pacing"
+pattern = "(?<!\\w)the\\s+(?:silence|air)\\s+(?:was|is)\\s+(?:quiet|still|heavy)(?:\\s+except\\s+for)?(?!\\w)"
+
+[[phrase]]
+category = "dialogue_and_pacing"
+pattern = "(?<!\\w)silent\\s+(?:exchange|conversation|communication)\\s+(?:passed\\s+)?between\\s+them(?!\\w)"
+
+[[phrase]]
+category = "dialogue_and_pacing"
+pattern = "(?<!\\w)smile\\s+(?:didn['’]t|did\\s+not)\\s+reach\\s+(?:his|her|their|my|your)\\s+eyes(?!\\w)"
+
+# ---------------------------------------------------------
+# METAPHOR SLOP
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)leav(?:es|ing)\\s+(?:little|nothing)\\s+to\\s+(?:the\\s+)?imagination(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)barely\\s+(?:contained|restrained|concealed)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)raw\\s+and\\s+primal(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:dangerous|predatory)\\s+glint(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:bee-stung|plush|pouty)\\s+lips(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)mask\\s+(?:crumbles?|comes?\\s+crashing\\s+down|shatters?)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)the\\s+weight\\s+of\\s+(?:the\\s+)?(?:silence|moment)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:silence|tension)\\s+(?:that\\s+)?(?:could|you\\s+could)\\s+(?:cut|be\\s+cut)\\s+with\\s+a\\s+knife(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:silence|tension)\\s+(?:stretches?|hangs?|falls?)(?:\\s+between)?(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:in\\s+one\\s+(?:smooth|fluid)\\s+motion|with\\s+practiced\\s+ease)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:moved?\\s+with\\s+practiced\\s+(?:efficiency|precision)|(?:her|his|their|my|your)\\s+motions?\\s+(?:were|was)\\s+economical)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:dances\\s+on\\s+the\\s+edge|teeters\\s+on\\s+the\\s+brink|walks\\s+a\\s+fine\\s+line|razor['’]s\\s+edge|precipice\\s+of|maelstrom\\s+of|whirlwind\\s+of)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)motes?\\s+of\\s+dust\\s+(?:dancing|floating|caught)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)sunlight\\s+filtered\\s+through(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)liquid\\s+(?:gold|silver|fire|amber|shadows)(?!\\w)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)(?:labyrinth|maze)\\s+of\\s+(?:the\\s+mind|memories|thoughts|shadows)(?!\\w)"
+
+# ---------------------------------------------------------
+# NEGATION PIVOTS
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "negation_pivots"
+pattern = "[.;]\\s+(?i:instead),\\s+[^.!?\\n]{1,50}[.!?]"
+
+[[phrase]]
+category = "negation_pivots"
+pattern = "(?i)(?<!\\w)(?:not|(?:wasn['’]t|weren['’]t|isn['’]t|aren['’]t|didn['’]t|doesn['’]t|don['’]t))\\s+(?:only|just|merely|simply|really|exactly)\\s+[^.!?\\n,;]{1,50},?\\s+but\\s+(?:rather\\s+)?[^.!?\\n]{1,80}(?:[.!?…]|$)"
+
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)leaves?\\s+little\\s+to\\s+the\\s+imagination(?!\\w)"
+
+# ---------------------------------------------------------
+# FANTASY SLOP
+# ---------------------------------------------------------
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)ethereal\\s+(?:form|figure|presence|being|voice|light|mist)(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)ancient\\s+(?:wisdom|power|presence)(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)eyes\\s+glow(?:ed|ing)?\\s+with\\s+(?:an?\\s+)?(?:eerie|otherworldly|unnatural|magical)\\s+light(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)(?:melodic|musical|silken)\\s+voice(?:\\s+echo(?:ed|ing)?\\s+in\\s+(?:her|his|their|my|your)\\s+mind)?(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)(?:shimmering|smoky)\\s+mist(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)you\\s+have\\s+summoned\\s+me,\\s+mortal(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)(?:the\\s+)?entity\\s+(?:intoned|mused|sighed|studied)(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)(?:a\\s+)?worthy\\s+wish(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)walk\\s+the\\s+path\\s+of(?!\\w)"
+
+[[phrase]]
+category = "fantasy_slop"
+pattern = "(?<!\\w)shimmering\\s+appendage(?!\\w)"
