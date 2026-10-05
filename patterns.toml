@@ -29,7 +29,15 @@ pattern = "(?<!\\w)Elara(?!\\w)"
 
 [[phrase]]
 category = "names"
+pattern = "(?<!\\w)Lila(?!\\w)"
+
+[[phrase]]
+category = "names"
 pattern = "(?<!\\w)Thorne(?!\\w)"
+
+[[phrase]]
+category = "names"
+pattern = "(?<!\\w)Voss(?!\\w)"
 
 [[phrase]]
 category = "names"
@@ -561,10 +569,6 @@ pattern = "(?<!\\w)(?:your|my|our)\\s+comfort\\s+is\\s+(?:my\\s+)?(?:priority|im
 
 [[phrase]]
 category = "consent_theater"
-pattern = "(?<!\\w)(?:establish|respect)(?:ing)?\\s+boundaries(?!\\w)"
-
-[[phrase]]
-category = "consent_theater"
 pattern = "(?<!\\w)(?:tell|let)\\s+me\\s+if\\s+(?:you|it)(?!\\w)"
 
 [[phrase]]
@@ -979,6 +983,10 @@ pattern = "(?<!\\w)playing\\s+a\\s+dangerous\\s+game(?!\\w)"
 category = "common_aisms"
 pattern = "(?<!\\w)and\\s+the\\s+game,\\s+as\\s+always,\\s+was\\s+on(?!\\w)"
 
+[[phrase]]
+category = "common_aisms"
+pattern = "(?ix)(?<!\\w)(?:(?:like|as\\s+if)\\s+solv(?:e|ing|ed)\\s+(?:a|the)\\s+puzzle|(?:was|were|is|are|felt|feels|seemed|seems|became|becomes)\\s+(?:like\\s+)?(?:a|the)\\s+puzzle\\s+(?:to\\s+solve|waiting\\s+to\\s+be\\s+solved|(?:[\\p{L}']+\\s+)?wanted\\s+to\\s+solve))(?!\\w)"
+
 # ---------------------------------------------------------
 # BODY REACTIONS
 # ---------------------------------------------------------
@@ -1339,6 +1347,10 @@ pattern = "(?<!\\w)liquid\\s+(?:gold|silver|fire|amber|shadows)(?!\\w)"
 category = "metaphor_slop"
 pattern = "(?<!\\w)(?:labyrinth|maze)\\s+of\\s+(?:the\\s+mind|memories|thoughts|shadows)(?!\\w)"
 
+[[phrase]]
+category = "metaphor_slop"
+pattern = "(?<!\\w)leaves?\\s+little\\s+to\\s+the\\s+imagination(?!\\w)"
+
 # ---------------------------------------------------------
 # NEGATION PIVOTS
 # ---------------------------------------------------------
@@ -1350,10 +1362,6 @@ pattern = "[.;]\\s+(?i:instead),\\s+[^.!?\\n]{1,50}[.!?]"
 [[phrase]]
 category = "negation_pivots"
 pattern = "(?i)(?<!\\w)(?:not|(?:wasn['’]t|weren['’]t|isn['’]t|aren['’]t|didn['’]t|doesn['’]t|don['’]t))\\s+(?:only|just|merely|simply|really|exactly)\\s+[^.!?\\n,;]{1,50},?\\s+but\\s+(?:rather\\s+)?[^.!?\\n]{1,80}(?:[.!?…]|$)"
-
-[[phrase]]
-category = "metaphor_slop"
-pattern = "(?<!\\w)leaves?\\s+little\\s+to\\s+the\\s+imagination(?!\\w)"
 
 # ---------------------------------------------------------
 # FANTASY SLOP
